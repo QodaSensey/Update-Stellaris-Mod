@@ -7,8 +7,8 @@ The verification is done by comparing the date of the mod file with the Last rev
 You can download multiple files at once. See the Settings menu.
 
 If you want to see information about the selected fashion.
-Used multi-upload files, see Settings
-Sorry, only on Russian language
+Used multi-upload files, see Settings.
+Sorry, only on Russian language.
 
 Эта программа считывает установленные моды для Stellaris и проверяет их обновления на сайте http://stellaris.smods.ru/.
 
@@ -26,9 +26,9 @@ Sorry, only on Russian language
  
 Информаци о моде  - двойной щелчок мыши и правая кнопка на таблице модов.
 Значок в строке состояния показывает список открытых потоков и окон.
-Используется мультизагрузка файлов, смотри Настройки
-Извините, пока только на русском языке
-P.S. Фон в "О Программе" меняются автоматически и по щелчку на картинке
+Используется мультизагрузка файлов, смотри Настройки.
+Извините, пока только на русском языке.
+P.S. Фон в "О Программе" меняются автоматически и по щелчку на картинке.
 
 Python 3.6.5
 with the module:
