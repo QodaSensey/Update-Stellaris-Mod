@@ -99,13 +99,13 @@ def get_instlled_mod():
             name_mod = file.readline()
             name_mod = name_mod[6:-2]
             file.close()
+            # Читаем дату мода (файла из каталога mod)
+            date_mod = datetime.datetime.fromtimestamp(os.path.getctime(filename))
             # Читаем id мода (имя файла без расширения)
             id_mod = str(mod_list[:-4])
             # Читаем размер мода
             filename = param['pathMods'] + '/workshop/content/281990/' + mod_list[:-4]
             size_mod = os.path.getsize(filename + "/" + os.listdir(filename)[0])
-            # Читаем дату мода (файла из каталога mod)
-            date_mod = datetime.datetime.fromtimestamp(os.path.getmtime(filename))
             inf_mod = [id_mod, name_mod, size_mod, date_mod]
             list_mod += [inf_mod]
 
@@ -338,7 +338,7 @@ class DialogOptions(QtWidgets.QDialog, Options.Ui_DialogOptions):
         global param
         old_path = param['pathMods']
         param['pathMods'] = self.textEdit.toPlainText()
-        param['pathDownload'] = self.textEdit_2.toPlainText()
+        param['pathLoad'] = self.textEdit_2.toPlainText()
         param['max_size'] = int(self.lineEdit.text())
         param['chunk'] = int(self.lineEdit_2.text())
         param['max_load'] = int(self.lineEdit_3.text())
@@ -347,7 +347,7 @@ class DialogOptions(QtWidgets.QDialog, Options.Ui_DialogOptions):
         param['max_win_load'] = int(self.lineEdit_6.text())
         with open(configUSM, "w") as file:
             file.writelines("pathMods = " + param['pathMods']+"\n")
-            file.writelines("pathDownload = " + param['pathDownload']+"\n")
+            file.writelines("pathLoad = " + param['pathLoad']+"\n")
             file.writelines("max_size =  " + self.lineEdit.text()+"\n")
             file.writelines("chunk = " + self.lineEdit_2.text()+"\n")
             file.writelines("max_load = " + self.lineEdit_3.text()+"\n")
@@ -1062,7 +1062,7 @@ else:
         line = line.split('=')
         p = line[0].strip()
         v = line[1].strip()
-        if p == 'pathMods' or p == 'pathDownload':
+        if p == 'pathMods' or p == 'pathLoad':
             param[p] = v
         else:
             param[p] = int(v)
